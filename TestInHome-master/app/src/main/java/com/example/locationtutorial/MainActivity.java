@@ -25,6 +25,7 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.ResolvableApiException;
@@ -71,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
     OutputStream outputStream;
 
     SerialThread serialThread;
+    private TextView textViewReceive; // 수신 된 데이터를 표시하기 위한 텍스트 뷰
+
 
     FusedLocationProviderClient fusedLocationProviderClient;
     LocationRequest locationRequest;
@@ -253,6 +256,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Log.d("SerialExam", "rx: " + stringBuilder.toString());
+        textViewReceive.append(stringBuilder.toString() + "\n");
     }
 
     void SendData(byte[] data) {
@@ -287,6 +291,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        textViewReceive = (TextView)findViewById(R.id.textView_receive);
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
