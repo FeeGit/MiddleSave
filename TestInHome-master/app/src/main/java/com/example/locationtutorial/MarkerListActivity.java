@@ -83,8 +83,8 @@ public class MarkerListActivity extends AppCompatActivity {
                 //리스트를 삭제하는것은 알람 팝업을 따로 구현하여 추가적인 확인을 구하자.
                 AlertDialog.Builder builder = new AlertDialog.Builder(com.example.locationtutorial.MarkerListActivity.this);     //다이얼을 띄워서 물어보고 지우기.
                 //내부에 들어갈 글을 적어주자.
-                builder.setTitle("메모 삭제");
-                builder.setMessage("메모를 삭제하시겠습니까?");
+                builder.setTitle("좌표 삭제");
+                builder.setMessage("좌표를 삭제하시겠습니까?");
                 //yes버튼이 눌리면
                 builder.setPositiveButton("삭제", new DialogInterface.OnClickListener() {
                     @Override

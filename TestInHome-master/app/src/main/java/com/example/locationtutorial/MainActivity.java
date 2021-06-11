@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     Timer timer;
 
     static final String SERIAL_PORT_NAME = "ttyS0";
-    static final int SERIAL_BAUDRATE = 38400;
+    static final int SERIAL_BAUDRATE = 9600;
 
     SerialPort serialPort;
     InputStream inputStream;
